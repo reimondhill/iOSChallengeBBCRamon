@@ -7,13 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF9E984922B95BCA00555F3D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E984822B95BCA00555F3D /* Network.swift */; };
+		CF9E984A22B95BCA00555F3D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E984822B95BCA00555F3D /* Network.swift */; };
+		CF9E984C22B95CDC00555F3D /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E984B22B95CDC00555F3D /* AppNetwork.swift */; };
+		CF9E985022B95E4D00555F3D /* headlines-enhanced.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */; };
+		CF9E985122B95E4D00555F3D /* headlines.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984F22B95E4D00555F3D /* headlines.json */; };
+		CF9E985422B9606C00555F3D /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985322B9606C00555F3D /* AppNetwork.swift */; };
+		CF9E985622B9613B00555F3D /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985522B9613B00555F3D /* NSObjectExtension.swift */; };
+		CF9E985722B9613B00555F3D /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985522B9613B00555F3D /* NSObjectExtension.swift */; };
+		CF9E985F22B961A600555F3D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985822B961A600555F3D /* UIButtonExtension.swift */; };
+		CF9E986022B961A600555F3D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985822B961A600555F3D /* UIButtonExtension.swift */; };
+		CF9E986122B961A600555F3D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985922B961A600555F3D /* StringExtension.swift */; };
+		CF9E986222B961A600555F3D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985922B961A600555F3D /* StringExtension.swift */; };
+		CF9E986322B961A600555F3D /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985A22B961A600555F3D /* UINavigationControllerExtension.swift */; };
+		CF9E986422B961A600555F3D /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985A22B961A600555F3D /* UINavigationControllerExtension.swift */; };
+		CF9E986522B961A600555F3D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985B22B961A600555F3D /* UIViewControllerExtension.swift */; };
+		CF9E986622B961A600555F3D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985B22B961A600555F3D /* UIViewControllerExtension.swift */; };
+		CF9E986722B961A600555F3D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985C22B961A600555F3D /* UIImageExtension.swift */; };
+		CF9E986822B961A600555F3D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985C22B961A600555F3D /* UIImageExtension.swift */; };
+		CF9E986922B961A600555F3D /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985D22B961A600555F3D /* UIVIewExtension.swift */; };
+		CF9E986A22B961A600555F3D /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985D22B961A600555F3D /* UIVIewExtension.swift */; };
+		CF9E986B22B961A600555F3D /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */; };
+		CF9E986C22B961A600555F3D /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */; };
 		CFAD1FDC22B94FAA00C393A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */; };
-		CFAD1FDE22B94FAA00C393A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDD22B94FAA00C393A3 /* ViewController.swift */; };
-		CFAD1FE122B94FAA00C393A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FDF22B94FAA00C393A3 /* Main.storyboard */; };
 		CFAD1FE322B94FAB00C393A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */; };
 		CFAD1FE622B94FAB00C393A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */; };
 		CFAD1FF122B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FF022B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift */; };
 		CFAD1FFC22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FFB22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.swift */; };
+		CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */; };
+		CFAD201622B9548000C393A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */; };
+		CFAD201722B9548000C393A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */; };
+		CFAD202222B955B000C393A3 /* TargetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD202122B955B000C393A3 /* TargetAssets.xcassets */; };
+		CFAD202422B955C600C393A3 /* TargetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD202322B955C600C393A3 /* TargetAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +59,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF9E984822B95BCA00555F3D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CF9E984B22B95CDC00555F3D /* AppNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetwork.swift; sourceTree = "<group>"; };
+		CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "headlines-enhanced.json"; sourceTree = "<group>"; };
+		CF9E984F22B95E4D00555F3D /* headlines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headlines.json; sourceTree = "<group>"; };
+		CF9E985322B9606C00555F3D /* AppNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetwork.swift; sourceTree = "<group>"; };
+		CF9E985522B9613B00555F3D /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		CF9E985822B961A600555F3D /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		CF9E985922B961A600555F3D /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CF9E985A22B961A600555F3D /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		CF9E985B22B961A600555F3D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		CF9E985C22B961A600555F3D /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		CF9E985D22B961A600555F3D /* UIVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+		CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		CFAD1FD822B94FAA00C393A3 /* RamonBBCChallengeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamonBBCChallengeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFAD1FDD22B94FAA00C393A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CFAD1FE022B94FAA00C393A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFAD1FE522B94FAB00C393A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAD1FE722B94FAB00C393A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +83,10 @@
 		CFAD1FF722B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamonBBCChallengeiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAD1FFB22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamonBBCChallengeiOSUITests.swift; sourceTree = "<group>"; };
 		CFAD1FFD22B94FAB00C393A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAD201B22B9548000C393A3 /* RamonBBCChallengeiOSDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamonBBCChallengeiOSDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAD201F22B9555200C393A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAD202122B955B000C393A3 /* TargetAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TargetAssets.xcassets; sourceTree = "<group>"; };
+		CFAD202322B955C600C393A3 /* TargetAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TargetAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +111,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFAD201422B9548000C393A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF9E984D22B95E3700555F3D /* MockResponses */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */,
+				CF9E984F22B95E4D00555F3D /* headlines.json */,
+			);
+			path = MockResponses;
+			sourceTree = "<group>";
+		};
+		CF9E985222B9605900555F3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E985322B9606C00555F3D /* AppNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CFAD1FCF22B94FA900C393A3 = {
 			isa = PBXGroup;
 			children = (
 				CFAD1FDA22B94FAA00C393A3 /* RamonBBCChallengeiOS */,
+				CFAD201D22B954AC00C393A3 /* RamonBBCChallengeiOSDev */,
 				CFAD1FEF22B94FAB00C393A3 /* RamonBBCChallengeiOSTests */,
 				CFAD1FFA22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests */,
 				CFAD1FD922B94FAA00C393A3 /* Products */,
@@ -90,6 +155,7 @@
 				CFAD1FD822B94FAA00C393A3 /* RamonBBCChallengeiOS.app */,
 				CFAD1FEC22B94FAB00C393A3 /* RamonBBCChallengeiOSTests.xctest */,
 				CFAD1FF722B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.xctest */,
+				CFAD201B22B9548000C393A3 /* RamonBBCChallengeiOSDev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,11 +164,12 @@
 			isa = PBXGroup;
 			children = (
 				CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */,
-				CFAD1FDD22B94FAA00C393A3 /* ViewController.swift */,
-				CFAD1FDF22B94FAA00C393A3 /* Main.storyboard */,
-				CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */,
-				CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */,
-				CFAD1FE722B94FAB00C393A3 /* Info.plist */,
+				CFAD200E22B9508E00C393A3 /* Helpers */,
+				CFAD200B22B9505C00C393A3 /* Model */,
+				CFAD200C22B9506700C393A3 /* ViewModel */,
+				CFAD200A22B9504E00C393A3 /* View */,
+				CFAD200D22B9507900C393A3 /* ViewControllers */,
+				CFAD200922B9503200C393A3 /* SupportingFiles */,
 			);
 			path = RamonBBCChallengeiOS;
 			sourceTree = "<group>";
@@ -123,6 +190,89 @@
 				CFAD1FFD22B94FAB00C393A3 /* Info.plist */,
 			);
 			path = RamonBBCChallengeiOSUITests;
+			sourceTree = "<group>";
+		};
+		CFAD200922B9503200C393A3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */,
+				CFAD202322B955C600C393A3 /* TargetAssets.xcassets */,
+				CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */,
+				CFAD1FE722B94FAB00C393A3 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CFAD200A22B9504E00C393A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFAD200B22B9505C00C393A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E984822B95BCA00555F3D /* Network.swift */,
+				CF9E984B22B95CDC00555F3D /* AppNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFAD200C22B9506700C393A3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFAD200D22B9507900C393A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CFAD200E22B9508E00C393A3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFAD200F22B9515D00C393A3 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CFAD200F22B9515D00C393A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E985522B9613B00555F3D /* NSObjectExtension.swift */,
+				CF9E985922B961A600555F3D /* StringExtension.swift */,
+				CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */,
+				CF9E985822B961A600555F3D /* UIButtonExtension.swift */,
+				CF9E985C22B961A600555F3D /* UIImageExtension.swift */,
+				CF9E985A22B961A600555F3D /* UINavigationControllerExtension.swift */,
+				CF9E985B22B961A600555F3D /* UIViewControllerExtension.swift */,
+				CF9E985D22B961A600555F3D /* UIVIewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFAD201D22B954AC00C393A3 /* RamonBBCChallengeiOSDev */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E985222B9605900555F3D /* Model */,
+				CFAD201E22B9550200C393A3 /* SupportingFiles */,
+			);
+			path = RamonBBCChallengeiOSDev;
+			sourceTree = "<group>";
+		};
+		CFAD201E22B9550200C393A3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E984D22B95E3700555F3D /* MockResponses */,
+				CFAD201F22B9555200C393A3 /* Info.plist */,
+				CFAD202122B955B000C393A3 /* TargetAssets.xcassets */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +331,23 @@
 			productReference = CFAD1FF722B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CFAD201122B9548000C393A3 /* RamonBBCChallengeiOSDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFAD201822B9548000C393A3 /* Build configuration list for PBXNativeTarget "RamonBBCChallengeiOSDev" */;
+			buildPhases = (
+				CFAD201222B9548000C393A3 /* Sources */,
+				CFAD201422B9548000C393A3 /* Frameworks */,
+				CFAD201522B9548000C393A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RamonBBCChallengeiOSDev;
+			productName = RamonBBCChallengeiOS;
+			productReference = CFAD201B22B9548000C393A3 /* RamonBBCChallengeiOSDev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -218,6 +385,7 @@
 			projectRoot = "";
 			targets = (
 				CFAD1FD722B94FA900C393A3 /* RamonBBCChallengeiOS */,
+				CFAD201122B9548000C393A3 /* RamonBBCChallengeiOSDev */,
 				CFAD1FEB22B94FAB00C393A3 /* RamonBBCChallengeiOSTests */,
 				CFAD1FF622B94FAB00C393A3 /* RamonBBCChallengeiOSUITests */,
 			);
@@ -231,7 +399,7 @@
 			files = (
 				CFAD1FE622B94FAB00C393A3 /* LaunchScreen.storyboard in Resources */,
 				CFAD1FE322B94FAB00C393A3 /* Assets.xcassets in Resources */,
-				CFAD1FE122B94FAA00C393A3 /* Main.storyboard in Resources */,
+				CFAD202422B955C600C393A3 /* TargetAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +417,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFAD201522B9548000C393A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAD201622B9548000C393A3 /* LaunchScreen.storyboard in Resources */,
+				CF9E985122B95E4D00555F3D /* headlines.json in Resources */,
+				CFAD201722B9548000C393A3 /* Assets.xcassets in Resources */,
+				CFAD202222B955B000C393A3 /* TargetAssets.xcassets in Resources */,
+				CF9E985022B95E4D00555F3D /* headlines-enhanced.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -256,8 +436,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFAD1FDE22B94FAA00C393A3 /* ViewController.swift in Sources */,
+				CF9E986322B961A600555F3D /* UINavigationControllerExtension.swift in Sources */,
+				CF9E984922B95BCA00555F3D /* Network.swift in Sources */,
+				CF9E985F22B961A600555F3D /* UIButtonExtension.swift in Sources */,
+				CF9E986122B961A600555F3D /* StringExtension.swift in Sources */,
+				CF9E986522B961A600555F3D /* UIViewControllerExtension.swift in Sources */,
+				CF9E986722B961A600555F3D /* UIImageExtension.swift in Sources */,
+				CF9E986B22B961A600555F3D /* UIApplicationExtension.swift in Sources */,
 				CFAD1FDC22B94FAA00C393A3 /* AppDelegate.swift in Sources */,
+				CF9E984C22B95CDC00555F3D /* AppNetwork.swift in Sources */,
+				CF9E986922B961A600555F3D /* UIVIewExtension.swift in Sources */,
+				CF9E985622B9613B00555F3D /* NSObjectExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +466,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFAD201222B9548000C393A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9E986422B961A600555F3D /* UINavigationControllerExtension.swift in Sources */,
+				CF9E984A22B95BCA00555F3D /* Network.swift in Sources */,
+				CF9E986022B961A600555F3D /* UIButtonExtension.swift in Sources */,
+				CF9E986222B961A600555F3D /* StringExtension.swift in Sources */,
+				CF9E986622B961A600555F3D /* UIViewControllerExtension.swift in Sources */,
+				CF9E986822B961A600555F3D /* UIImageExtension.swift in Sources */,
+				CF9E986C22B961A600555F3D /* UIApplicationExtension.swift in Sources */,
+				CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */,
+				CF9E985422B9606C00555F3D /* AppNetwork.swift in Sources */,
+				CF9E986A22B961A600555F3D /* UIVIewExtension.swift in Sources */,
+				CF9E985722B9613B00555F3D /* NSObjectExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,14 +500,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CFAD1FDF22B94FAA00C393A3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFAD1FE022B94FAA00C393A3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,7 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = RamonBBCChallengeiOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOS/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +651,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = RamonBBCChallengeiOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOS/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,6 +745,42 @@
 			};
 			name = Release;
 		};
+		CFAD201922B9548000C393A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33482W4AH2;
+				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOSDev/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFAD201A22B9548000C393A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33482W4AH2;
+				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOSDev/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +816,15 @@
 			buildConfigurations = (
 				CFAD200722B94FAB00C393A3 /* Debug */,
 				CFAD200822B94FAB00C393A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFAD201822B9548000C393A3 /* Build configuration list for PBXNativeTarget "RamonBBCChallengeiOSDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAD201922B9548000C393A3 /* Debug */,
+				CFAD201A22B9548000C393A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
