@@ -32,22 +32,8 @@ class HeadlineCollectionViewCell: UICollectionViewCell {
     
     
     //UI
-    lazy private(set) var titleLabel:BaseLabel = {
-        let rtView = BaseLabel(withConfiguration: .headline)
-        
-        rtView.numberOfLines = 0
-        rtView.textAlignment = .left
-        
-        return rtView
-    }()
-    lazy private (set) var lastUpdateLabel:BaseLabel = {
-        let rtView = BaseLabel(withConfiguration: .normalLight)
-        
-        rtView.numberOfLines = 1
-        rtView.textAlignment = .left
-        
-        return rtView
-    }()
+    lazy private(set) var titleLabel:BaseLabel = { BaseLabel(withConfiguration: .headline) }()
+    lazy private (set) var lastUpdateLabel:BaseLabel = { BaseLabel(withConfiguration: .normalLight) }()
     
 }
 

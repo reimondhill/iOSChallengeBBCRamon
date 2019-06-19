@@ -10,17 +10,48 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    //MARK:- Properties
+    //MARK: Constants
+    let networkHelper:NetworkHelper
+    
+    //MARK: Vars
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
+    
+    
+    //MARK:- Constructor
+    init(networkHelper:NetworkHelper = NetworkHelper.shared) {
+        
+        self.networkHelper = networkHelper
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+
+//MARK:- Lifecycle methods
+extension BaseViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = UIColor.mainViewBackground
         
     }
     
-
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AnalyticsHelper.sendScreenAnalyticsEvent(identifier: identifier, network: networkHelper.network, completion: nil)
+        
+    }
+    
+    
 }

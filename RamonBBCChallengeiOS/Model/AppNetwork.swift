@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class AppNetwork:Network{
     
     var headlines: String{
@@ -15,6 +16,9 @@ class AppNetwork:Network{
     }
     var headlinesEnhanced: String{
         return "https://raw.githubusercontent.com/bbc/news-apps-coding-challenge/master/headlines-enhanced.json"
+    }
+    var analyticsURL: String{
+        return"https://raw.githubusercontent.com/bbc/news-apps-ios-coding-challenge/master/analytics"
     }
     
     
@@ -28,8 +32,13 @@ class AppNetwork:Network{
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
         
+        let startTime = DispatchTime.now().uptimeNanoseconds / 1_000_000
         let urlSession = URLSession(configuration: sessionConfig)
         urlSession.dataTask(with: urlRequest) { (data, response, error) in
+            
+            let totalTime = DispatchTime.now().uptimeNanoseconds / 1_000_000 - startTime
+            print("Request finished in ", totalTime," ms.")
+            AnalyticsHelper.sendLoadAnalyticsEvent(time: totalTime, network: self, completion: nil)
             
             if let error = error {
                 completion(.failure(error))
@@ -55,7 +64,6 @@ class AppNetwork:Network{
             
             }.resume()
         
-        
     }
     
     func fetchData(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
@@ -77,9 +85,35 @@ class AppNetwork:Network{
         
     }
     
-    func send(data: Data, urlRequest: URLRequest, completion: @escaping (Error?) -> Void) {
+    func send(urlRequest: URLRequest, completion: ((Error?) -> Void)?) {
         
-        //TODO
+        guard urlRequest.url != nil else{
+            completion?(NetworkError.invalidURL)
+            return
+        }
+        
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
+        
+        print("Sending request to: ", urlRequest.url!)
+        let urlSession = URLSession(configuration: sessionConfig)
+        urlSession.dataTask(with: urlRequest) { (data, response, error) in
+            
+            if let error = error {
+                completion?(error)
+                return
+            }
+            
+            //Ignoring data back by now
+            guard let response = response as? HTTPURLResponse,
+                (200 ..< 300) ~= response.statusCode else{
+                    completion?(NetworkError.dataCorrupted)
+                    return
+            }
+            
+            completion?(nil)
+            
+            }.resume()
         
     }
     

@@ -18,9 +18,10 @@ protocol NetworkURL {
     
     ///StringURL for fetching headlines
     var headlines:String{get}
-    ///StringURL for fetching a headline detail
+    ///StringURL for fetching a headlins enhanced
     var headlinesEnhanced:String{get}
-
+    ///String URL for analytics service
+    var analyticsURL:String{get}
 }
 
 protocol Network:NetworkURL {
@@ -44,6 +45,6 @@ protocol Network:NetworkURL {
     /// - Parameters:
     ///   - urlRequest: Url request with the request config
     ///   - completion: handler called when data is successfully sent and response received
-    func send(data:Data, urlRequest:URLRequest, completion:@escaping (Error?)->Void)
+    func send(urlRequest:URLRequest, completion:((Error?)->Void)?)
     
 }

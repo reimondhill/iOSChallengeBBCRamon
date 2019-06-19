@@ -59,6 +59,9 @@ extension UIColor{
     static var mainViewBackground:UIColor{
         return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
     }
+    static var popupViewBackground:UIColor{
+        return UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.4)
+    }
     
     static var primaryViewBackground:UIColor{
         return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)

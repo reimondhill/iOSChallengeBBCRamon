@@ -63,6 +63,9 @@ extension BaseLabel{
     
     func setupView(){
         
+        numberOfLines = 0
+        textAlignment = .left
+        
         switch labelConfiguration {
         case .navBar:
             textColor = UIColor.navigationBarText
@@ -71,6 +74,7 @@ extension BaseLabel{
         case .normal:
             textColor = UIColor.mainText
             font = UIFont.systemFont(ofSize: TextSize.normal, weight: .regular)
+            textAlignment = .justified
         case .normalLight:
             textColor = UIColor.secondaryText
             font = UIFont.systemFont(ofSize: TextSize.normal, weight: .light)

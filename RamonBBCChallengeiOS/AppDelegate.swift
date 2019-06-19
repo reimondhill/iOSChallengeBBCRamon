@@ -12,13 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    static var shared:AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         setupNavigationBarStyle()
         
-        window = UIWindow()
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
         window?.rootViewController = UINavigationController(rootViewController: HeadlinesViewController(networkHelper: NetworkHelper.shared))
@@ -54,7 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     
     func setupNavigationBarStyle() {
-        UIApplication.shared.statusBarView!.backgroundColor = UIColor.statusBarBackground
+        
+        //UIApplication.shared.statusBarView!.backgroundColor = UIColor.statusBarBackground
         
         UINavigationBar.appearance().barTintColor = UIColor.navigationBarBackground
         UINavigationBar.appearance().tintColor = UIColor.navigationBarTint

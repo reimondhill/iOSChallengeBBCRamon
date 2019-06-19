@@ -30,10 +30,10 @@ class HeadlineDetailsViewController: BaseViewController {
     
     
     //MARK:- Constructor
-    init(headline:Headline) {
+    init(networkHelper:NetworkHelper = NetworkHelper.shared, headline:Headline) {
         
         self.headline = headline
-        super.init(nibName: nil, bundle: nil)
+        super.init(networkHelper: networkHelper)
         
     }
     
@@ -98,8 +98,6 @@ private extension HeadlineDetailsViewController{
         //Adding introduction
         let introductionLabel = BaseLabel(withConfiguration: .normal)
         introductionLabel.text = headline.introduction
-        introductionLabel.numberOfLines = 0
-        introductionLabel.textAlignment = .justified
         contentStackView.addArrangedSubview(introductionLabel)
 
     }

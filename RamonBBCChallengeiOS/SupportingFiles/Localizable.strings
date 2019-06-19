@@ -6,4 +6,6 @@
   Copyright © 2019 Reimond Hill. All rights reserved.
 */
 
+"messages.noHeadlines" = "No headlines available...";
 "messages.unavailable" = "Unavailable";
+"messages.topStories" = "Top Stories";

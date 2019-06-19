@@ -9,10 +9,11 @@
 import UIKit
 
 class HeadlinesViewController: BaseViewController {
-
+    
     //MARK:- Properties
     //MARK: Constants
-    let networkHelper:NetworkHelper
+    let loaderOverlay:LoaderOverlay
+    
     private let refreshControl = UIRefreshControl()
     
     
@@ -50,13 +51,22 @@ class HeadlinesViewController: BaseViewController {
         
     }()
     
+    lazy private (set) var messageLabel:BaseLabel = {
+        let rtView = BaseLabel(withConfiguration: .normal)
+        
+        rtView.textAlignment = .center
+        
+        return rtView
+    }()
+    
     
     
     //MARK:- Constructor
-    init(networkHelper:NetworkHelper = NetworkHelper.shared) {
+    init(networkHelper:NetworkHelper = NetworkHelper.shared, loaderOverlay:LoaderOverlay = LoaderOverlay.shared) {
         
-        self.networkHelper = networkHelper
-        super.init(nibName: nil, bundle: nil)
+        self.loaderOverlay = loaderOverlay
+        super.init(networkHelper: networkHelper)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,7 +83,8 @@ extension HeadlinesViewController{
         super.viewDidLoad()
         
         setupView()
-        updateHeadlines(completion: nil)
+        updateHeadlines(showingLoader:true, completion: nil)
+        title = NSLocalizedString("messages.topStories", comment: "")
         
     }
     
@@ -95,11 +106,25 @@ private extension HeadlinesViewController{
         view.addSubview(headlinesCollectionView)
         headlinesCollectionView.constraintToSuperViewEdges(padding: .init(padding: Margins.small), safeView: true)
         
+        view.addSubview(messageLabel)
+        messageLabel.anchor(top: nil,
+                            leading: view.leadingAnchor,
+                            bottom: nil,
+                            trailing: view.trailingAnchor,
+                            padding: .init(padding: Margins.medium),
+                            centerX: view.centerXAnchor,
+                            centerY: view.centerYAnchor)
+        
+        
     }
     
-    func updateHeadlines(completion: (()->Void)?){
+    func updateHeadlines(showingLoader:Bool = false, completion: (()->Void)?){
         
         print(logClassName,"Getting headlines")
+        
+        if showingLoader{
+            loaderOverlay.showOverlay()
+        }
         networkHelper.getHeadlines { [weak self] (result) in
             
             guard let strongSelf = self else { return }
@@ -117,8 +142,11 @@ private extension HeadlinesViewController{
                     strongSelf.headlines = []
                 }
                 
-                completion?()
+                strongSelf.messageLabel.text = strongSelf.headlines.count > 0 ? nil:NSLocalizedString("messages.noHeadlines", comment: "")
+                strongSelf.messageLabel.isHidden = strongSelf.headlines.count > 0
                 strongSelf.headlinesCollectionView.reloadData()
+                strongSelf.loaderOverlay.hideOverlayView()
+                completion?()
                 
             }
             
@@ -135,7 +163,7 @@ private extension HeadlinesViewController{
             strongSelf.refreshControl.endRefreshing()
             
         }
-    
+        
     }
     
 }
@@ -144,6 +172,7 @@ private extension HeadlinesViewController{
 //MARK:- UICollectionView methods
 //MARK: UICollectionViewDataSource
 extension HeadlinesViewController:UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return headlines.count
     }
@@ -161,7 +190,6 @@ extension HeadlinesViewController:UICollectionViewDataSource{
         }
         
     }
-    
     
 }
 
@@ -207,7 +235,8 @@ extension HeadlinesViewController:UICollectionViewDelegateFlowLayout{
 extension HeadlinesViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(HeadlineDetailsViewController(headline: headlines[indexPath.row]),
+        navigationController?.pushViewController(HeadlineDetailsViewController(networkHelper: networkHelper,
+                                                                               headline: headlines[indexPath.row]),
                                                  animated: true)
     }
     

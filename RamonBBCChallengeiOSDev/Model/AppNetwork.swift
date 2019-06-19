@@ -22,12 +22,19 @@ class AppNetwork: NSObject{
 
 //MARK:- Network implementation
 extension AppNetwork:Network{
+    
     var headlines: String {
         guard let url = Bundle.main.url(forResource: "headlines", withExtension: "json") else{ return ""}
         return url.absoluteString
     }
+    
     var headlinesEnhanced: String {
         guard let url = Bundle.main.url(forResource: "headlines-enhanced", withExtension: "json") else{ return ""}
+        return url.absoluteString
+    }
+    
+    var analyticsURL: String{
+        guard let url = Bundle.main.url(forResource: "analytics", withExtension: nil) else{ return ""}
         return url.absoluteString
     }
     
@@ -58,10 +65,9 @@ extension AppNetwork:Network{
         
     }
     
-    func send(data: Data, urlRequest: URLRequest, completion: @escaping (Error?) -> Void) {
-        
+    func send(urlRequest: URLRequest, completion: ((Error?) -> Void)?) {
         //TODO
-        
+        completion?(nil)
     }
     
 }
