@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        setupNavigationBarStyle()
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = UINavigationController(rootViewController: HeadlinesViewController(networkHelper: NetworkHelper.shared))
+
         return true
     }
 
@@ -40,7 +47,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+}
 
 
+extension AppDelegate{
+    
+    func setupNavigationBarStyle() {
+        UIApplication.shared.statusBarView!.backgroundColor = UIColor.statusBarBackground
+        
+        UINavigationBar.appearance().barTintColor = UIColor.navigationBarBackground
+        UINavigationBar.appearance().tintColor = UIColor.navigationBarTint
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.navigationBarText]
+        
+        UINavigationBar.appearance().isTranslucent = false
+        
+        UITabBar.appearance().barTintColor = UIColor.navigationBarBackground
+        UITabBar.appearance().tintColor = UIColor.navigationBarTint
+    }
+    
 }
 

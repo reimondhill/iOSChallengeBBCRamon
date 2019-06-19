@@ -29,6 +29,36 @@
 		CF9E986A22B961A600555F3D /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985D22B961A600555F3D /* UIVIewExtension.swift */; };
 		CF9E986B22B961A600555F3D /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */; };
 		CF9E986C22B961A600555F3D /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */; };
+		CF9E986F22B9692B00555F3D /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E986D22B9692A00555F3D /* StyleManager.swift */; };
+		CF9E987022B9692B00555F3D /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E986D22B9692A00555F3D /* StyleManager.swift */; };
+		CF9E987122B9692B00555F3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E986E22B9692B00555F3D /* Constants.swift */; };
+		CF9E987222B9692B00555F3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E986E22B9692B00555F3D /* Constants.swift */; };
+		CF9E987422B96B1200555F3D /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987322B96B1200555F3D /* BaseLabel.swift */; };
+		CF9E987522B96B1200555F3D /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987322B96B1200555F3D /* BaseLabel.swift */; };
+		CF9E987722B9714500555F3D /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987622B9714500555F3D /* LoadingOverlay.swift */; };
+		CF9E987822B9714500555F3D /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987622B9714500555F3D /* LoadingOverlay.swift */; };
+		CF9E987A22B9727600555F3D /* Headline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987922B9727600555F3D /* Headline.swift */; };
+		CF9E987B22B9727600555F3D /* Headline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987922B9727600555F3D /* Headline.swift */; };
+		CF9E987D22B9744D00555F3D /* HeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987C22B9744D00555F3D /* HeadlinesViewController.swift */; };
+		CF9E987E22B9744D00555F3D /* HeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987C22B9744D00555F3D /* HeadlinesViewController.swift */; };
+		CF9E988022B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987F22B9746100555F3D /* HeadlineDetailsViewController.swift */; };
+		CF9E988122B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E987F22B9746100555F3D /* HeadlineDetailsViewController.swift */; };
+		CF9E988322B974EA00555F3D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988222B974EA00555F3D /* NetworkHelper.swift */; };
+		CF9E988422B974EA00555F3D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988222B974EA00555F3D /* NetworkHelper.swift */; };
+		CF9E988622B984D000555F3D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988522B984D000555F3D /* BaseViewController.swift */; };
+		CF9E988722B984D000555F3D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988522B984D000555F3D /* BaseViewController.swift */; };
+		CF9E988A22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */; };
+		CF9E988B22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */; };
+		CF9E988D22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */; };
+		CF9E988E22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */; };
+		CF9E989022B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */; };
+		CF9E989122B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */; };
+		CF9E989922B992D900555F3D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E989822B992D900555F3D /* DateExtension.swift */; };
+		CF9E989A22B992D900555F3D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E989822B992D900555F3D /* DateExtension.swift */; };
+		CF9E989C22B9940F00555F3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF9E989B22B9940F00555F3D /* Localizable.strings */; };
+		CF9E989D22B9940F00555F3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF9E989B22B9940F00555F3D /* Localizable.strings */; };
+		CF9E989F22B9943A00555F3D /* HeadlineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E989E22B9943A00555F3D /* HeadlineResponse.swift */; };
+		CF9E98A022B9943A00555F3D /* HeadlineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E989E22B9943A00555F3D /* HeadlineResponse.swift */; };
 		CFAD1FDC22B94FAA00C393A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */; };
 		CFAD1FE322B94FAB00C393A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */; };
 		CFAD1FE622B94FAB00C393A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */; };
@@ -72,6 +102,21 @@
 		CF9E985C22B961A600555F3D /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		CF9E985D22B961A600555F3D /* UIVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
 		CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		CF9E986D22B9692A00555F3D /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		CF9E986E22B9692B00555F3D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF9E987322B96B1200555F3D /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		CF9E987622B9714500555F3D /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		CF9E987922B9727600555F3D /* Headline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headline.swift; sourceTree = "<group>"; };
+		CF9E987C22B9744D00555F3D /* HeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesViewController.swift; sourceTree = "<group>"; };
+		CF9E987F22B9746100555F3D /* HeadlineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineDetailsViewController.swift; sourceTree = "<group>"; };
+		CF9E988222B974EA00555F3D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		CF9E988522B984D000555F3D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
+		CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		CF9E989822B992D900555F3D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		CF9E989B22B9940F00555F3D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CF9E989E22B9943A00555F3D /* HeadlineResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineResponse.swift; sourceTree = "<group>"; };
 		CFAD1FD822B94FAA00C393A3 /* RamonBBCChallengeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamonBBCChallengeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +244,7 @@
 				CFAD202322B955C600C393A3 /* TargetAssets.xcassets */,
 				CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */,
 				CFAD1FE722B94FAB00C393A3 /* Info.plist */,
+				CF9E989B22B9940F00555F3D /* Localizable.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -206,6 +252,9 @@
 		CFAD200A22B9504E00C393A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF9E987322B96B1200555F3D /* BaseLabel.swift */,
+				CF9E987622B9714500555F3D /* LoadingOverlay.swift */,
+				CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +264,8 @@
 			children = (
 				CF9E984822B95BCA00555F3D /* Network.swift */,
 				CF9E984B22B95CDC00555F3D /* AppNetwork.swift */,
+				CF9E987922B9727600555F3D /* Headline.swift */,
+				CF9E989E22B9943A00555F3D /* HeadlineResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +273,7 @@
 		CFAD200C22B9506700C393A3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +281,9 @@
 		CFAD200D22B9507900C393A3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF9E988522B984D000555F3D /* BaseViewController.swift */,
+				CF9E987C22B9744D00555F3D /* HeadlinesViewController.swift */,
+				CF9E987F22B9746100555F3D /* HeadlineDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				CFAD200F22B9515D00C393A3 /* Extensions */,
+				CF9E986E22B9692B00555F3D /* Constants.swift */,
+				CF9E988222B974EA00555F3D /* NetworkHelper.swift */,
+				CF9E986D22B9692A00555F3D /* StyleManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,10 +302,12 @@
 		CFAD200F22B9515D00C393A3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CF9E989822B992D900555F3D /* DateExtension.swift */,
 				CF9E985522B9613B00555F3D /* NSObjectExtension.swift */,
 				CF9E985922B961A600555F3D /* StringExtension.swift */,
 				CF9E985E22B961A600555F3D /* UIApplicationExtension.swift */,
 				CF9E985822B961A600555F3D /* UIButtonExtension.swift */,
+				CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */,
 				CF9E985C22B961A600555F3D /* UIImageExtension.swift */,
 				CF9E985A22B961A600555F3D /* UINavigationControllerExtension.swift */,
 				CF9E985B22B961A600555F3D /* UIViewControllerExtension.swift */,
@@ -398,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAD1FE622B94FAB00C393A3 /* LaunchScreen.storyboard in Resources */,
+				CF9E989C22B9940F00555F3D /* Localizable.strings in Resources */,
 				CFAD1FE322B94FAB00C393A3 /* Assets.xcassets in Resources */,
 				CFAD202422B955C600C393A3 /* TargetAssets.xcassets in Resources */,
 			);
@@ -422,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAD201622B9548000C393A3 /* LaunchScreen.storyboard in Resources */,
+				CF9E989D22B9940F00555F3D /* Localizable.strings in Resources */,
 				CF9E985122B95E4D00555F3D /* headlines.json in Resources */,
 				CFAD201722B9548000C393A3 /* Assets.xcassets in Resources */,
 				CFAD202222B955B000C393A3 /* TargetAssets.xcassets in Resources */,
@@ -437,11 +499,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9E986322B961A600555F3D /* UINavigationControllerExtension.swift in Sources */,
+				CF9E989922B992D900555F3D /* DateExtension.swift in Sources */,
+				CF9E988022B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */,
+				CF9E987422B96B1200555F3D /* BaseLabel.swift in Sources */,
+				CF9E988A22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */,
 				CF9E984922B95BCA00555F3D /* Network.swift in Sources */,
+				CF9E987A22B9727600555F3D /* Headline.swift in Sources */,
+				CF9E988622B984D000555F3D /* BaseViewController.swift in Sources */,
 				CF9E985F22B961A600555F3D /* UIButtonExtension.swift in Sources */,
 				CF9E986122B961A600555F3D /* StringExtension.swift in Sources */,
 				CF9E986522B961A600555F3D /* UIViewControllerExtension.swift in Sources */,
+				CF9E988D22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */,
+				CF9E986F22B9692B00555F3D /* StyleManager.swift in Sources */,
+				CF9E989022B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */,
+				CF9E988322B974EA00555F3D /* NetworkHelper.swift in Sources */,
 				CF9E986722B961A600555F3D /* UIImageExtension.swift in Sources */,
+				CF9E987722B9714500555F3D /* LoadingOverlay.swift in Sources */,
+				CF9E989F22B9943A00555F3D /* HeadlineResponse.swift in Sources */,
+				CF9E987D22B9744D00555F3D /* HeadlinesViewController.swift in Sources */,
+				CF9E987122B9692B00555F3D /* Constants.swift in Sources */,
 				CF9E986B22B961A600555F3D /* UIApplicationExtension.swift in Sources */,
 				CFAD1FDC22B94FAA00C393A3 /* AppDelegate.swift in Sources */,
 				CF9E984C22B95CDC00555F3D /* AppNetwork.swift in Sources */,
@@ -471,11 +547,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9E986422B961A600555F3D /* UINavigationControllerExtension.swift in Sources */,
+				CF9E989A22B992D900555F3D /* DateExtension.swift in Sources */,
+				CF9E988122B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */,
+				CF9E987522B96B1200555F3D /* BaseLabel.swift in Sources */,
+				CF9E988B22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */,
 				CF9E984A22B95BCA00555F3D /* Network.swift in Sources */,
+				CF9E987B22B9727600555F3D /* Headline.swift in Sources */,
+				CF9E988722B984D000555F3D /* BaseViewController.swift in Sources */,
 				CF9E986022B961A600555F3D /* UIButtonExtension.swift in Sources */,
 				CF9E986222B961A600555F3D /* StringExtension.swift in Sources */,
 				CF9E986622B961A600555F3D /* UIViewControllerExtension.swift in Sources */,
+				CF9E988E22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */,
+				CF9E987022B9692B00555F3D /* StyleManager.swift in Sources */,
+				CF9E989122B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */,
+				CF9E988422B974EA00555F3D /* NetworkHelper.swift in Sources */,
 				CF9E986822B961A600555F3D /* UIImageExtension.swift in Sources */,
+				CF9E987822B9714500555F3D /* LoadingOverlay.swift in Sources */,
+				CF9E98A022B9943A00555F3D /* HeadlineResponse.swift in Sources */,
+				CF9E987E22B9744D00555F3D /* HeadlinesViewController.swift in Sources */,
+				CF9E987222B9692B00555F3D /* Constants.swift in Sources */,
 				CF9E986C22B961A600555F3D /* UIApplicationExtension.swift in Sources */,
 				CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */,
 				CF9E985422B9606C00555F3D /* AppNetwork.swift in Sources */,
