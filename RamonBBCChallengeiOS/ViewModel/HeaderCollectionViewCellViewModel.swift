@@ -1,5 +1,5 @@
 //
-//  HeaderCollectionViewCellViewModel.swift
+//  HeadlineCollectionViewCellViewModel.swift
 //  RamonBBCChallengeiOS
 //
 //  Created by Ramon Haro Marques on 18/06/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderCollectionViewCellViewModel: NSObject {
+class HeadlineCollectionViewCellViewModel: NSObject {
 
     let headline:Headline
     

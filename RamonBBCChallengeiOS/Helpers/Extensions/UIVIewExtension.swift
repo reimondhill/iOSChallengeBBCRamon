@@ -202,18 +202,26 @@ extension UIView{
     
     ///Constrait to superView with optional margins
     @discardableResult
-    func constraintToSuperViewEdges(padding:UIEdgeInsets = .zero) -> AnchoredConstraints?{
+    func constraintToSuperViewEdges(padding:UIEdgeInsets = .zero, safeView:Bool = false) -> AnchoredConstraints?{
         
         guard let superview = superview else{ return nil }
         
         var anchoredConstraints = AnchoredConstraints()
         translatesAutoresizingMaskIntoConstraints = false
         
-        anchoredConstraints.top = topAnchor.constraint(equalTo: superview.topAnchor, constant: padding.top)
-        anchoredConstraints.trailing = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -padding.right)
-        anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: padding.bottom)
-        anchoredConstraints.leading = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: padding.left)
-        
+        if #available(iOS 11.0, *), safeView{
+            anchoredConstraints.top = topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: padding.top)
+            anchoredConstraints.trailing = trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor, constant: -padding.right)
+            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor, constant: padding.bottom)
+            anchoredConstraints.leading = leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor, constant: padding.left)
+        }
+        else {
+            anchoredConstraints.top = topAnchor.constraint(equalTo: superview.topAnchor, constant: padding.top)
+            anchoredConstraints.trailing = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -padding.right)
+            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: padding.bottom)
+            anchoredConstraints.leading = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: padding.left)
+        }
+
         [anchoredConstraints.top, anchoredConstraints.leading, anchoredConstraints.bottom, anchoredConstraints.trailing].forEach{ $0?.isActive = true }
         
         return anchoredConstraints

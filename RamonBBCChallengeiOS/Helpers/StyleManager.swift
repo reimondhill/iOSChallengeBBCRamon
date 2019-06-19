@@ -65,13 +65,14 @@ extension UIColor{
     }
     
     static var selectionBackground:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+        return UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 235.0/255.0, alpha: 1)
     }
     
 }
 
 struct Margins {
     
+    static let xxSmall:CGFloat = 1
     static let xSmall:CGFloat = 3
     static let small:CGFloat = 4
     static let medium:CGFloat = 8

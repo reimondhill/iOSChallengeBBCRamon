@@ -13,17 +13,38 @@ class HeadlinesViewController: BaseViewController {
     //MARK:- Properties
     //MARK: Constants
     let networkHelper:NetworkHelper
+    private let refreshControl = UIRefreshControl()
     
     
     //MARK: Vars
     var headlines:[Headline] = []
+    var numOfCells:CGFloat{
+        switch currentTraitStatus {
+        case .wRhR:
+            return 3
+        case .wChR:
+            return 1
+        case .wChC, .wRhC:
+            return 2
+        }
+    }
+    
     
     //UI
     lazy private (set) var headlinesCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         
         let rtView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        rtView.backgroundColor = .clear
+        rtView.register(HeadlineCollectionViewCell.self, forCellWithReuseIdentifier: HeadlineCollectionViewCell.identifier)
+        rtView.dataSource = self
+        rtView.delegate = self
+        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        rtView.alwaysBounceVertical = true
+        rtView.refreshControl = refreshControl
         
         return rtView
         
@@ -52,7 +73,14 @@ extension HeadlinesViewController{
         super.viewDidLoad()
         
         setupView()
-        updateHeadlines()
+        updateHeadlines(completion: nil)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        headlinesCollectionView.reloadData()
         
     }
     
@@ -64,24 +92,125 @@ private extension HeadlinesViewController{
     
     func setupView(){
         
+        view.addSubview(headlinesCollectionView)
+        headlinesCollectionView.constraintToSuperViewEdges(padding: .init(padding: Margins.small), safeView: true)
+        
     }
     
-    func updateHeadlines(){
+    func updateHeadlines(completion: (()->Void)?){
         
-        print("Getting the thing")
-        networkHelper.getHeader { [weak self] (result) in
+        print(logClassName,"Getting headlines")
+        networkHelper.getHeadlines { [weak self] (result) in
             
-            print("END Getting the thing")
-            switch result{
+            guard let strongSelf = self else { return }
+            
+            DispatchQueue.main.async {
                 
-            case .success(let response):
-                print("YEAAAAH")
-            case .failure(_):
-                print("PUTAAAAA")
+                print(strongSelf.logClassName,"Finished getting headlines")
+                switch result{
+                    
+                case .success(let response):
+                    print(strongSelf.logClassName,"Succes getting headlines")
+                    strongSelf.headlines = response.sorted(by: { $0.updated ?? 0 > $1.updated ?? 0 })
+                case .failure(let error):
+                    print(strongSelf.logClassName,"Error getting headlines:", error)
+                    strongSelf.headlines = []
+                }
+                
+                completion?()
+                strongSelf.headlinesCollectionView.reloadData()
+                
             }
             
         }
         
+    }
+    
+    @objc func didPullToRefresh(sender: Any) {
+        print(logClassName, "Refreshing")
+        
+        updateHeadlines { [weak self] in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.refreshControl.endRefreshing()
+            
+        }
+    
+    }
+    
+}
+
+
+//MARK:- UICollectionView methods
+//MARK: UICollectionViewDataSource
+extension HeadlinesViewController:UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return headlines.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let headlineCell = collectionView.dequeueReusableCell(withReuseIdentifier: HeadlineCollectionViewCell.identifier, for: indexPath) as? HeadlineCollectionViewCell{
+            
+            headlineCell.headlineCellVM = HeadlineCollectionViewCellViewModel(headline: headlines[indexPath.row])
+            
+            return headlineCell
+        }
+        else{
+            return UICollectionViewCell()
+        }
+        
+    }
+    
+    
+}
+
+//MARK: UICollectionViewDelegateFlowLayout
+extension HeadlinesViewController:UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var width = ( (collectionView.bounds.width / numOfCells) - ( (2 * Margins.large) / numOfCells ) )
+        
+        if numOfCells > 1{
+            width -= Margins.medium
+        }
+        
+        let height = Margins.medium + 46 + Margins.large + 21 + Margins.medium
+        
+        return CGSize(width: width, height: height)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top:Margins.large,
+                            left:Margins.large,
+                            bottom:Margins.large,
+                            right:Margins.large)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return Margins.large
+        
+    }
+    
+}
+
+//MARK: UICollectionViewDelegate
+extension HeadlinesViewController:UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(HeadlineDetailsViewController(headline: headlines[indexPath.row]),
+                                                 animated: true)
     }
     
 }

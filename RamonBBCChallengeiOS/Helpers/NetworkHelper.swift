@@ -39,7 +39,7 @@ class NetworkHelper: NSObject {
 extension NetworkHelper{
     
     //ALL at the moment
-    func getHeader(completion:@escaping (Result<HeadlineResponse, Error>)->Void){
+    func getHeadlines(completion:@escaping (Result<[Headline], Error>)->Void){
         
         let urlComponents = URLComponents(string: network.headlinesEnhanced)
         //Fututre URL GET query items
@@ -55,7 +55,12 @@ extension NetworkHelper{
         
             switch headlineResult{
             case .success(let headlineResponse):
-                completion(.success(headlineResponse))
+                if let headlines = headlineResponse.headlines{
+                    completion(.success(headlines))
+                }
+                else{
+                    completion(.failure(NetworkHelper.NetworkHelperError.noResponse))
+                }
             case .failure(let resultError):
                 completion(.failure(resultError))
             }

@@ -1,5 +1,5 @@
 //
-//  HeaderCollectionViewCell.swift
+//  HeadlineCollectionViewCell.swift
 //  RamonBBCChallengeiOS
 //
 //  Created by Ramon Haro Marques on 18/06/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderCollectionViewCell: UICollectionViewCell {
+class HeadlineCollectionViewCell: UICollectionViewCell {
     
     //MARK:- Properties
     
@@ -17,16 +17,16 @@ class HeaderCollectionViewCell: UICollectionViewCell {
         didSet {
             
             let view = UIView(frame:self.bounds)
-            view.backgroundColor = isSelected ? UIColor.selectionBackground : .clear
+            view.backgroundColor = isSelected ? UIColor.selectionBackground : UIColor.primaryViewBackground
             self.selectedBackgroundView = view
             
         }
         
     }
     
-    var headerCellVM:HeaderCollectionViewCellViewModel!{
+    var headlineCellVM:HeadlineCollectionViewCellViewModel!{
         didSet{
-            populateView(headerCollectionViewCellViewModel: headerCellVM)
+            populateView(HeadlineCollectionViewCellViewModel: headlineCellVM)
         }
     }
     
@@ -36,7 +36,7 @@ class HeaderCollectionViewCell: UICollectionViewCell {
         let rtView = BaseLabel(withConfiguration: .headline)
         
         rtView.numberOfLines = 0
-        rtView.textAlignment = .center
+        rtView.textAlignment = .left
         
         return rtView
     }()
@@ -53,7 +53,7 @@ class HeaderCollectionViewCell: UICollectionViewCell {
 
 
 //MARK:- Lifecycle methods
-extension HeaderCollectionViewCell{
+extension HeadlineCollectionViewCell{
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -70,11 +70,12 @@ extension HeaderCollectionViewCell{
 
 
 //MARK:- Private methods
-private extension HeaderCollectionViewCell{
+private extension HeadlineCollectionViewCell{
     
     func setupView(){
         
-        addBorder(borderWidth: Margins.xSmall, radius: BorderRadius.medium, color: UIColor.defaultSeparator)
+        addBorder(borderWidth: Margins.xSmall, radius: BorderRadius.medium, color: .clear)
+        backgroundColor = .primaryViewBackground
         
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor,
@@ -93,10 +94,10 @@ private extension HeaderCollectionViewCell{
         
     }
     
-    func populateView(headerCollectionViewCellViewModel:HeaderCollectionViewCellViewModel){
+    func populateView(HeadlineCollectionViewCellViewModel:HeadlineCollectionViewCellViewModel){
         
-        titleLabel.text = headerCollectionViewCellViewModel.headlineTitle
-        lastUpdateLabel.text = headerCollectionViewCellViewModel.lastUpdated
+        titleLabel.text = HeadlineCollectionViewCellViewModel.headlineTitle
+        lastUpdateLabel.text = HeadlineCollectionViewCellViewModel.lastUpdated
         
     }
     

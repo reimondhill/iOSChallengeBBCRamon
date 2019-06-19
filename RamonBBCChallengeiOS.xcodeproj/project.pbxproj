@@ -47,8 +47,8 @@
 		CF9E988422B974EA00555F3D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988222B974EA00555F3D /* NetworkHelper.swift */; };
 		CF9E988622B984D000555F3D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988522B984D000555F3D /* BaseViewController.swift */; };
 		CF9E988722B984D000555F3D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988522B984D000555F3D /* BaseViewController.swift */; };
-		CF9E988A22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */; };
-		CF9E988B22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */; };
+		CF9E988A22B9862C00555F3D /* HeadlineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeadlineCollectionViewCell.swift */; };
+		CF9E988B22B9862C00555F3D /* HeadlineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988922B9862C00555F3D /* HeadlineCollectionViewCell.swift */; };
 		CF9E988D22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */; };
 		CF9E988E22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */; };
 		CF9E989022B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */; };
@@ -111,7 +111,7 @@
 		CF9E987F22B9746100555F3D /* HeadlineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineDetailsViewController.swift; sourceTree = "<group>"; };
 		CF9E988222B974EA00555F3D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		CF9E988522B984D000555F3D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF9E988922B9862C00555F3D /* HeadlineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF9E988C22B9897F00555F3D /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		CF9E988F22B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		CF9E989822B992D900555F3D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 			children = (
 				CF9E987322B96B1200555F3D /* BaseLabel.swift */,
 				CF9E987622B9714500555F3D /* LoadingOverlay.swift */,
-				CF9E988922B9862C00555F3D /* HeaderCollectionViewCell.swift */,
+				CF9E988922B9862C00555F3D /* HeadlineCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 				CF9E989922B992D900555F3D /* DateExtension.swift in Sources */,
 				CF9E988022B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */,
 				CF9E987422B96B1200555F3D /* BaseLabel.swift in Sources */,
-				CF9E988A22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */,
+				CF9E988A22B9862C00555F3D /* HeadlineCollectionViewCell.swift in Sources */,
 				CF9E984922B95BCA00555F3D /* Network.swift in Sources */,
 				CF9E987A22B9727600555F3D /* Headline.swift in Sources */,
 				CF9E988622B984D000555F3D /* BaseViewController.swift in Sources */,
@@ -550,7 +550,7 @@
 				CF9E989A22B992D900555F3D /* DateExtension.swift in Sources */,
 				CF9E988122B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */,
 				CF9E987522B96B1200555F3D /* BaseLabel.swift in Sources */,
-				CF9E988B22B9862C00555F3D /* HeaderCollectionViewCell.swift in Sources */,
+				CF9E988B22B9862C00555F3D /* HeadlineCollectionViewCell.swift in Sources */,
 				CF9E984A22B95BCA00555F3D /* Network.swift in Sources */,
 				CF9E987B22B9727600555F3D /* Headline.swift in Sources */,
 				CF9E988722B984D000555F3D /* BaseViewController.swift in Sources */,
@@ -724,6 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOS/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,6 +743,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOS/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,6 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOSDev/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -860,6 +863,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = "$(SRCROOT)/RamonBBCChallengeiOSDev/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
