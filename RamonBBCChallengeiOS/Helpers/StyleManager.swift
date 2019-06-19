@@ -12,7 +12,7 @@ extension UIColor{
     
     //MARK:- App Colors Extension
     static var accentColor:UIColor {
-        return UIColor(red: 250.0/255.0, green: 77.0/255.0, blue: 25.0/255.0, alpha: 1)
+        return UIColor(red: 187.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1)
     }
     
     static var defaultSeparator:UIColor {
@@ -20,7 +20,7 @@ extension UIColor{
     }
     
     static var defaultTint:UIColor{
-        return UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1)
+        return mainText
     }
     
     
@@ -42,13 +42,7 @@ extension UIColor{
         return accentColor
     }
     static var toolbarTint:UIColor{
-        return .white
-    }
-    
-    
-    //MARK: UIView
-    static var mainViewBackground:UIColor{
-        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
+        return navigationBarTint
     }
     
     
@@ -58,6 +52,20 @@ extension UIColor{
     }
     static var secondaryText:UIColor{
         return UIColor(red: 61.0/255.0, green: 61.0/255.0, blue: 61.0/255.0, alpha: 1)
+    }
+    
+    
+    //MARK: Views
+    static var mainViewBackground:UIColor{
+        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+    }
+    
+    static var primaryViewBackground:UIColor{
+        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
+    }
+    
+    static var selectionBackground:UIColor{
+        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
     }
     
 }

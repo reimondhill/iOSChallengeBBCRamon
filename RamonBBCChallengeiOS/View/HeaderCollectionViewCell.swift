@@ -13,6 +13,17 @@ class HeaderCollectionViewCell: UICollectionViewCell {
     //MARK:- Properties
     
     //MARK: Vars
+    override var isSelected: Bool {
+        didSet {
+            
+            let view = UIView(frame:self.bounds)
+            view.backgroundColor = isSelected ? UIColor.selectionBackground : .clear
+            self.selectedBackgroundView = view
+            
+        }
+        
+    }
+    
     var headerCellVM:HeaderCollectionViewCellViewModel!{
         didSet{
             populateView(headerCollectionViewCellViewModel: headerCellVM)
@@ -73,11 +84,11 @@ private extension HeaderCollectionViewCell{
                           padding: .init(padding: Margins.medium))
         
         addSubview(lastUpdateLabel)
-        lastUpdateLabel.anchor(top: titleLabel.bottomAnchor,
-                               leading: titleLabel.leadingAnchor,
+        lastUpdateLabel.anchor(top: nil,
+                               leading: leadingAnchor,
                                bottom: bottomAnchor,
-                               trailing: titleLabel.trailingAnchor,
-                               padding: .init(top: Margins.small, left: 0, bottom: 0, right: 0))
+                               trailing: trailingAnchor,
+                               padding: .init(padding: Margins.medium))
         
         
     }
