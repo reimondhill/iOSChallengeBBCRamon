@@ -21,6 +21,10 @@ class HeadlineDetailsViewController: BaseViewController {
     lazy private (set) var contentStackView:UIStackView = {
         let rtView = UIStackView()
         
+        rtView.axis = .vertical
+        rtView.spacing = Margins.large
+        rtView.distribution = .fill
+        
         return rtView
     }()
     
@@ -47,6 +51,7 @@ extension HeadlineDetailsViewController{
         super.viewDidLoad()
         
         setupView()
+        populateContentStackView(headline: headline)
         
     }
     
@@ -61,8 +66,42 @@ private extension HeadlineDetailsViewController{
         view.addSubview(scrollView)
         scrollView.constraintToSuperViewEdges(padding: .init(padding: Margins.medium), safeView: true)
         
+        scrollView.addSubview(contentStackView)
+        contentStackView.anchor(top: scrollView.topAnchor,
+                                leading: scrollView.leadingAnchor,
+                                bottom: scrollView.bottomAnchor,
+                                trailing: scrollView.trailingAnchor,
+                                width: scrollView.widthAnchor)
         
         
+        
+    }
+    
+    func populateContentStackView(headline:Headline){
+        
+        //Adding Headline + Last Updated
+        let headerStackView = UIStackView()
+        headerStackView.axis = .vertical
+        headerStackView.spacing = 0
+        headerStackView.distribution = .fill
+        
+        let headlineLabel = BaseLabel(withConfiguration: .headline)
+        headlineLabel.text = headline.headline
+        headerStackView.addArrangedSubview(headlineLabel)
+        
+        let lastUpdatedLabel = BaseLabel(withConfiguration: .normalLight)
+        lastUpdatedLabel.text = headline.lastUpdatedString
+        headerStackView.addArrangedSubview(lastUpdatedLabel)
+        
+        contentStackView.addArrangedSubview(headerStackView)
+        
+        //Adding introduction
+        let introductionLabel = BaseLabel(withConfiguration: .normal)
+        introductionLabel.text = headline.introduction
+        introductionLabel.numberOfLines = 0
+        introductionLabel.textAlignment = .justified
+        contentStackView.addArrangedSubview(introductionLabel)
+
     }
     
 }

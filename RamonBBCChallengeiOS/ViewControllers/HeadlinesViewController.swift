@@ -170,8 +170,9 @@ extension HeadlinesViewController:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var width = ( (collectionView.bounds.width / numOfCells) - ( (2 * Margins.large) / numOfCells ) )
+        var width = ( (collectionView.bounds.width / numOfCells) - ( (2 * Margins.medium) / numOfCells ) )
         
+        //extra padding
         if numOfCells > 1{
             width -= Margins.medium
         }
@@ -184,10 +185,7 @@ extension HeadlinesViewController:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top:Margins.large,
-                            left:Margins.large,
-                            bottom:Margins.large,
-                            right:Margins.large)
+        return UIEdgeInsets(padding: Margins.medium)
         
     }
     
@@ -199,7 +197,7 @@ extension HeadlinesViewController:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return Margins.large
+        return Margins.medium
         
     }
     
