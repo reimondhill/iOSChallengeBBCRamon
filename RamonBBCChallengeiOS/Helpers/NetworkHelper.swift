@@ -15,7 +15,6 @@ class NetworkHelper: NSObject {
     //MARK:- Properties
     //MARK: Constants
     enum NetworkHelperError:Error{
-        case invalidURL
         case noResponse
     }
     
@@ -45,7 +44,7 @@ extension NetworkHelper{
         //Fututre URL GET query items
         
         guard let headlinesURL = urlComponents?.url else{
-            completion(.failure(NetworkHelper.NetworkHelperError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         

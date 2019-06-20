@@ -9,7 +9,7 @@
 import Foundation
 
 
-class AppNetwork:Network{
+class AppNetwork:NSObject, Network{
     
     var headlines: String{
         return "https://raw.githubusercontent.com/bbc/news-apps-coding-challenge/master/headlines.json"
@@ -24,6 +24,79 @@ class AppNetwork:Network{
     
     func fetchCodable<T>(urlRequest: URLRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
         
+        //Technically the analytics are send only when fetch action. It can be moved to performRequest func
+        let startTime = DispatchTime.now().uptimeNanoseconds / 1_000_000
+        performRequest(urlRequest) { [weak self] (result) in
+            
+            guard let strongSelf = self else { return }
+            
+            let totalTime = DispatchTime.now().uptimeNanoseconds / 1_000_000 - startTime
+            print(strongSelf.logClassName,"Request finished in ", totalTime," ms.")
+            AnalyticsHelper.sendLoadAnalyticsEvent(time: totalTime, network: strongSelf, completion: nil)
+            
+            switch result{
+                
+            case .success(let data):
+                do {
+                    let response = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(response))
+                }
+                catch let decodeError{
+                    completion(.failure(decodeError))
+                }
+                
+            case .failure(let error):
+                completion(.failure(error))
+                
+            }
+            
+        }
+        
+    }
+    
+    func send(params: [String : String], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>)->Void)?) {
+        
+        guard var urlComponents = URLComponents(string: urlString) else{
+            completion?(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+       urlComponents.queryItems = []
+        for (key, value) in params{
+            urlComponents.queryItems?.append(URLQueryItem(name: key, value: value))
+        }
+        
+        guard let url = urlComponents.url else{
+            completion?(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        print(logClassName, "Sending request to: ", url)
+        performRequest(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5)) { (result) in
+            
+            switch result{
+                
+            case .success(let data):
+                print("Success")
+                completion?(.success(data))
+            case .failure(let error):
+                print("Failure")
+                completion?(.failure(error))
+            
+            }
+            
+        }
+        
+    }
+
+}
+
+
+//MARK:- Private methods
+private extension AppNetwork{
+    
+    func performRequest(_ urlRequest: URLRequest, completion: @escaping ((Result<Data, Error>)->Void) ){
+        
         guard urlRequest.url != nil else{
             completion(.failure(NetworkError.invalidURL))
             return
@@ -32,13 +105,8 @@ class AppNetwork:Network{
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
         
-        let startTime = DispatchTime.now().uptimeNanoseconds / 1_000_000
         let urlSession = URLSession(configuration: sessionConfig)
         urlSession.dataTask(with: urlRequest) { (data, response, error) in
-            
-            let totalTime = DispatchTime.now().uptimeNanoseconds / 1_000_000 - startTime
-            print("Request finished in ", totalTime," ms.")
-            AnalyticsHelper.sendLoadAnalyticsEvent(time: totalTime, network: self, completion: nil)
             
             if let error = error {
                 completion(.failure(error))
@@ -54,67 +122,10 @@ class AppNetwork:Network{
                     
             }
             
-            do {
-                let response = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(response))
-            }
-            catch let decodeError{
-                completion(.failure(decodeError))
-            }
-            
-            }.resume()
-        
-    }
-    
-    func fetchData(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            
-            if let error = error {
-                completion(.failure(error))
-            }
-            
-            guard let data = data else{
-                completion(.failure(NetworkError.dataCorrupted))
-                return
-            }
-            
             completion(.success(data))
-            
-            }.resume()
         
-    }
+        }.resume()
     
-    func send(urlRequest: URLRequest, completion: ((Error?) -> Void)?) {
-        
-        guard urlRequest.url != nil else{
-            completion?(NetworkError.invalidURL)
-            return
-        }
-        
-        let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
-        
-        print("Sending request to: ", urlRequest.url!)
-        let urlSession = URLSession(configuration: sessionConfig)
-        urlSession.dataTask(with: urlRequest) { (data, response, error) in
-            
-            if let error = error {
-                completion?(error)
-                return
-            }
-            
-            //Ignoring data back by now
-            guard let response = response as? HTTPURLResponse,
-                (200 ..< 300) ~= response.statusCode else{
-                    completion?(NetworkError.dataCorrupted)
-                    return
-            }
-            
-            completion?(nil)
-            
-            }.resume()
-        
     }
     
 }

@@ -56,9 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     
     func setupNavigationBarStyle() {
-        
-        //UIApplication.shared.statusBarView!.backgroundColor = UIColor.statusBarBackground
-        
+                
         UINavigationBar.appearance().barTintColor = UIColor.navigationBarBackground
         UINavigationBar.appearance().tintColor = UIColor.navigationBarTint
         

@@ -54,15 +54,8 @@ class MockNetwork: NSObject, Network{
         
     }
     
-    func fetchData(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    func send(params: [String : Any], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
         
-        //TODO
-        
-    }
-    
-    func send(urlRequest: URLRequest, completion: ((Error?) -> Void)?) {
-        //TODO
-        completion?(nil)
     }
     
 }

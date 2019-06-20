@@ -14,6 +14,11 @@ enum NetworkError:Error {
     case invalidURL
 }
 
+enum RequestType:String{
+    case get = "GET"
+    case post = "POST"
+}
+
 protocol NetworkURL {
     
     ///StringURL for fetching headlines
@@ -33,18 +38,13 @@ protocol Network:NetworkURL {
     ///   - completion: Result type handler called the request has finished.
     func fetchCodable<T:Codable>(urlRequest:URLRequest, completion:@escaping (Result<T,Error>)->Void)
     
-    /// Perform GET/POST request returning the result decoded object
-    ///
-    /// - Parameters:
-    ///   - urlRequest: Url request with the request config
-    ///   - completion: Result type handler called the request has finished.
-    func fetchData(urlRequest:URLRequest, completion:@escaping (Result<Data,Error>)->Void)
-    
     /// Send HTTP data
     ///
     /// - Parameters:
-    ///   - urlRequest: Url request with the request config
+    ///   - params: Key value for the params to send
+    ///   - url: String of the url reques
+    ///   - requestType: Method used to send the values. GET, POST.
     ///   - completion: handler called when data is successfully sent and response received
-    func send(urlRequest:URLRequest, completion:((Error?)->Void)?)
+    func send(params:[String:String], urlString:String, requestType: RequestType, completion:( (Result<Data,Error>)->Void )?)
     
 }

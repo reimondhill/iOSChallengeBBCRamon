@@ -8,21 +8,9 @@
 
 import Foundation
 
-class AppNetwork: NSObject{
+class AppNetwork: NSObject, Network{
     
-    //MARK:- Properties
-    //MARK: Constants
-    enum AppNetworkError:Error {
-        case dataCorrupted
-    }
-    
-}
-
-
-
-//MARK:- Network implementation
-extension AppNetwork:Network{
-    
+    //MARK:- Network implementation
     var headlines: String {
         guard let url = Bundle.main.url(forResource: "headlines", withExtension: "json") else{ return ""}
         return url.absoluteString
@@ -59,15 +47,10 @@ extension AppNetwork:Network{
         
     }
     
-    func fetchData(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    func send(params: [String : Any], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
         
-        //TODO
+        //let urlComponents = URLComponents(string: urlString)
         
-    }
-    
-    func send(urlRequest: URLRequest, completion: ((Error?) -> Void)?) {
-        //TODO
-        completion?(nil)
     }
     
 }
