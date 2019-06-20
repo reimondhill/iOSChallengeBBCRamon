@@ -70,7 +70,6 @@ extension BaseLabel{
         case .navBar:
             textColor = UIColor.navigationBarText
             font = UIFont.systemFont(ofSize: TextSize.navigationTitle, weight: .semibold)
-        //normal & normalLight could go together but it is easier to read and change by separating them
         case .normal:
             textColor = UIColor.mainText
             font = UIFont.systemFont(ofSize: TextSize.normal, weight: .regular)

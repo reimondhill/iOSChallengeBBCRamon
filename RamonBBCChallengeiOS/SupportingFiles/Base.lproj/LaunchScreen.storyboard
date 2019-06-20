@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbc_logo_black_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-h9-cYJ">
-                                <rect key="frame" x="72.5" y="425.5" width="269" height="55"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbc_logo_white_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-h9-cYJ">
+                                <rect key="frame" x="143" y="389" width="128" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kmh-h9-cYJ" secondAttribute="height" multiplier="312:64" id="ZFe-4Q-8zC"/>
+                                    <constraint firstAttribute="width" constant="128" id="L3m-1R-Wce"/>
+                                    <constraint firstAttribute="width" secondItem="kmh-h9-cYJ" secondAttribute="height" id="ZFe-4Q-8zC"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.73333333333333328" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kmh-h9-cYJ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.65" id="I4O-Zz-bh9"/>
                             <constraint firstItem="kmh-h9-cYJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VKU-fP-OAG"/>
                             <constraint firstItem="kmh-h9-cYJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qsj-9Y-xuo"/>
                         </constraints>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bbc_logo_black_transparent" width="312" height="64"/>
+        <image name="bbc_logo_white_transparent" width="292" height="160"/>
     </resources>
 </document>

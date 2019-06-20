@@ -16,7 +16,7 @@ class HeadlineCollectionViewCellViewModel: NSObject {
         return headline.headline ?? ""
     }
     var lastUpdated:String{
-        return headline.lastUpdatedString ?? NSLocalizedString("messages.unavailable", comment: "")
+        return headline.lastUpdatedString() ?? NSLocalizedString("messages.unavailable", comment: "")
     }
     
     

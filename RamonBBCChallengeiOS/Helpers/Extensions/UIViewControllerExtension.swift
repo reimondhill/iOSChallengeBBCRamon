@@ -36,27 +36,6 @@ extension UIViewController{
         
     }
     
-    func setupClearNavigationBar(){
-        
-        guard let navigationController = navigationController else{ return }
-        
-        UIApplication.shared.statusBarView!.backgroundColor = .clear
-        navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.isTranslucent = true
-        
-    }
-    
-    func setDefaultNavigationBar(){
-        
-        UIApplication.shared.statusBarView!.backgroundColor = UIColor.statusBarBackground
-        guard let navigationController = navigationController else{ return }
-        
-        navigationController.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
-        navigationController.navigationBar.shadowImage = nil
-        navigationController.navigationBar.isTranslucent = false
-        
-    }
     
     ///Adds a right item in the navigation bar and returns the UIButton. Further configuration outside this function.
     @discardableResult

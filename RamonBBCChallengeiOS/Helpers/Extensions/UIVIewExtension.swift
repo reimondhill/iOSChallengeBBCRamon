@@ -262,11 +262,15 @@ extension UIView{
         }
         
         if let width = width{
-            anchoredConstraints.width = widthAnchor.constraint(equalTo: width, multiplier: widthMultiplier)
+            anchoredConstraints.width = widthAnchor.constraint(equalTo: width,
+                                                               multiplier: widthMultiplier,
+                                                               constant: (-1 * padding.left - padding.right))
         }
         
         if let height = height{
-            anchoredConstraints.height = height.constraint(equalTo: height, multiplier: heightMultiplier)
+            anchoredConstraints.height = height.constraint(equalTo: height,
+                                                           multiplier: heightMultiplier,
+                                                           constant: (-1 * padding.top - padding.bottom))
         }
         
         if let centerX = centerX{

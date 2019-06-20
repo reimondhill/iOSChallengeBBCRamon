@@ -22,7 +22,7 @@ class HeadlineDetailsViewController: BaseViewController {
         let rtView = UIStackView()
         
         rtView.axis = .vertical
-        rtView.spacing = Margins.large
+        rtView.spacing = Margins.xLarge
         rtView.distribution = .fill
         
         return rtView
@@ -71,6 +71,7 @@ private extension HeadlineDetailsViewController{
                                 leading: scrollView.leadingAnchor,
                                 bottom: scrollView.bottomAnchor,
                                 trailing: scrollView.trailingAnchor,
+                                padding: .init(padding: Margins.medium),
                                 width: scrollView.widthAnchor)
         
         
@@ -82,7 +83,7 @@ private extension HeadlineDetailsViewController{
         //Adding Headline + Last Updated
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
-        headerStackView.spacing = 0
+        headerStackView.spacing = Margins.small
         headerStackView.distribution = .fill
         
         let headlineLabel = BaseLabel(withConfiguration: .headline)
@@ -90,7 +91,7 @@ private extension HeadlineDetailsViewController{
         headerStackView.addArrangedSubview(headlineLabel)
         
         let lastUpdatedLabel = BaseLabel(withConfiguration: .normalLight)
-        lastUpdatedLabel.text = headline.lastUpdatedString
+        lastUpdatedLabel.text = headline.lastUpdatedString()
         headerStackView.addArrangedSubview(lastUpdatedLabel)
         
         contentStackView.addArrangedSubview(headerStackView)

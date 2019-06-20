@@ -16,15 +16,6 @@ struct Headline:Codable{
     let updated:Int?
     let introduction:String?
     
-    //It can be done here
-    var lastUpdatedString:String?{
-        
-        guard let updated = updated else{ return nil }
-        return Date.getTimeComponentString(olderDate: Date.init(timeIntervalSince1970: Double(updated)),
-                                           newerDate: Date())
-        
-    }
-    
     enum CodingKeys: String, CodingKey {
         case headline
         case firstPublished = "first-published"
@@ -32,4 +23,13 @@ struct Headline:Codable{
         case introduction
     }
     
+    
+    //It can be done here
+    func lastUpdatedString(from date:Date = Date())->String?{
+        
+        guard let updated = updated else{ return nil }
+        return Date.getTimeComponentString(olderDate: Date(timeIntervalSince1970: Double(updated)),
+                                           newerDate: date)
+        
+    }
 }
