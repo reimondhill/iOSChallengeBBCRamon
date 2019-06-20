@@ -38,6 +38,7 @@ class HeadlinesViewController: BaseViewController {
         
         let rtView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
+        rtView.accessibilityIdentifier = "HeadlinesCollectionView"
         rtView.backgroundColor = .clear
         rtView.register(HeadlineCollectionViewCell.self, forCellWithReuseIdentifier: HeadlineCollectionViewCell.identifier)
         rtView.dataSource = self
@@ -50,11 +51,12 @@ class HeadlinesViewController: BaseViewController {
         return rtView
         
     }()
-    
     lazy private (set) var messageLabel:BaseLabel = {
         let rtView = BaseLabel(withConfiguration: .normal)
-        
+
+        rtView.accessibilityIdentifier = "HeadlinesMessageLabel"
         rtView.textAlignment = .center
+        //rtView.isHidden = true
         
         return rtView
     }()

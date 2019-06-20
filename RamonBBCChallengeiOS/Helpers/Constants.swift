@@ -9,9 +9,6 @@
 
 import UIKit
 
-///Returns the default path value for the FourSquareDevData JSON file
-let fourSquareConfigPath = "FourSquareDevData"
-
 let unknown = NSLocalizedString("messages.unknown", comment: "")
 
 ///Custom Error structure

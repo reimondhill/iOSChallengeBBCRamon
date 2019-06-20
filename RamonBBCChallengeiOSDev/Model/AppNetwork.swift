@@ -10,6 +10,12 @@ import Foundation
 
 class AppNetwork: NSObject, Network{
     
+    //MARK:- Properties
+    //MARK: Constants
+    enum AppNetworkError:Error {
+        case dataCorrupted
+    }
+    
     //MARK:- Network implementation
     var headlines: String {
         guard let url = Bundle.main.url(forResource: "headlines", withExtension: "json") else{ return ""}
@@ -34,7 +40,7 @@ class AppNetwork: NSObject, Network{
             return
         }
         
-        print("MOCKING...")
+        print(url)
         
         do{
             let response = try JSONDecoder().decode(T.self, from: try Data(contentsOf: url))
@@ -47,9 +53,23 @@ class AppNetwork: NSObject, Network{
         
     }
     
-    func send(params: [(String,String)], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
+    func send(params: [(String, String)], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
         
-        completion?(.success("OK".data(using: .utf8)!))
+        print(logClassName, "urlString = ", urlString)
+        
+        guard var urlComponents = URLComponents(string: urlString) else{
+            completion?(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        urlComponents.queryItems = []
+        for (key, value) in params{
+            urlComponents.queryItems?.append(URLQueryItem(name: key, value: value))
+        }
+        
+        let rtString = urlComponents.url?.relativeString ?? ""
+        completion?(.success(rtString.data(using: .utf8) ?? Data()))
+        
         
     }
     

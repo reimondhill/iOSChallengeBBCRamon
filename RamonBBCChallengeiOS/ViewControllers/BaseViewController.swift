@@ -20,7 +20,6 @@ class BaseViewController: UIViewController {
     }
     
     
-    
     //MARK:- Constructor
     init(networkHelper:NetworkHelper = NetworkHelper.shared) {
         
@@ -43,6 +42,7 @@ extension BaseViewController{
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.mainViewBackground
+        view.accessibilityIdentifier = identifier
         
     }
     

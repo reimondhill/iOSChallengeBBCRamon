@@ -15,7 +15,6 @@
 		CF9E984C22B95CDC00555F3D /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E984B22B95CDC00555F3D /* AppNetwork.swift */; };
 		CF9E985022B95E4D00555F3D /* headlines-enhanced.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */; };
 		CF9E985122B95E4D00555F3D /* headlines.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984F22B95E4D00555F3D /* headlines.json */; };
-		CF9E985422B9606C00555F3D /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985322B9606C00555F3D /* AppNetwork.swift */; };
 		CF9E985622B9613B00555F3D /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985522B9613B00555F3D /* NSObjectExtension.swift */; };
 		CF9E985722B9613B00555F3D /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985522B9613B00555F3D /* NSObjectExtension.swift */; };
 		CF9E985F22B961A600555F3D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985822B961A600555F3D /* UIButtonExtension.swift */; };
@@ -70,6 +69,8 @@
 		CFAD201722B9548000C393A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */; };
 		CFAD202222B955B000C393A3 /* TargetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD202122B955B000C393A3 /* TargetAssets.xcassets */; };
 		CFAD202422B955C600C393A3 /* TargetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD202322B955C600C393A3 /* TargetAssets.xcassets */; };
+		CFC23BF522BBAEDF00B6034B /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E985322B9606C00555F3D /* AppNetwork.swift */; };
+		CFC23BF722BBAFAB00B6034B /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC23BF622BBAFAB00B6034B /* MockNetwork.swift */; };
 		CFC940DE22BAB96F000EC55A /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC940DD22BAB96F000EC55A /* ExtensionsTests.swift */; };
 		CFC940E622BAD3D3000EC55A /* ModelAndNeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC940E522BAD3D3000EC55A /* ModelAndNeworkTests.swift */; };
 		CFC940E822BAD492000EC55A /* BaseViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC940E722BAD491000EC55A /* BaseViewTests.swift */; };
@@ -77,7 +78,6 @@
 		CFC940EB22BAEB62000EC55A /* headlines-enhanced.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */; };
 		CFC940EC22BAEB66000EC55A /* headlines.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984F22B95E4D00555F3D /* headlines.json */; };
 		CFC940ED22BAEB6B000EC55A /* analytics in Resources */ = {isa = PBXBuildFile; fileRef = CF210F6D22BA70FC00E1C71D /* analytics */; };
-		CFC940F022BAEBA5000EC55A /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC940EF22BAEBA5000EC55A /* MockNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,11 +142,11 @@
 		CFAD201F22B9555200C393A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFAD202122B955B000C393A3 /* TargetAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TargetAssets.xcassets; sourceTree = "<group>"; };
 		CFAD202322B955C600C393A3 /* TargetAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TargetAssets.xcassets; sourceTree = "<group>"; };
+		CFC23BF622BBAFAB00B6034B /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		CFC940DD22BAB96F000EC55A /* ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		CFC940E522BAD3D3000EC55A /* ModelAndNeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAndNeworkTests.swift; sourceTree = "<group>"; };
 		CFC940E722BAD491000EC55A /* BaseViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewTests.swift; sourceTree = "<group>"; };
 		CFC940E922BAD72F000EC55A /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
-		CFC940EF22BAEBA5000EC55A /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,7 +237,6 @@
 		CFAD1FEF22B94FAB00C393A3 /* RamonBBCChallengeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CFC940EE22BAEB97000EC55A /* Model */,
 				CFAD1FF022B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift */,
 				CFC940DD22BAB96F000EC55A /* ExtensionsTests.swift */,
 				CFC940E522BAD3D3000EC55A /* ModelAndNeworkTests.swift */,
@@ -284,6 +283,7 @@
 			children = (
 				CF9E984822B95BCA00555F3D /* Network.swift */,
 				CF9E984B22B95CDC00555F3D /* AppNetwork.swift */,
+				CFC23BF622BBAFAB00B6034B /* MockNetwork.swift */,
 				CF9E987922B9727600555F3D /* Headline.swift */,
 				CF9E989E22B9943A00555F3D /* HeadlineResponse.swift */,
 			);
@@ -354,14 +354,6 @@
 				CFAD202122B955B000C393A3 /* TargetAssets.xcassets */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		CFC940EE22BAEB97000EC55A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CFC940EF22BAEBA5000EC55A /* MockNetwork.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +539,7 @@
 				CF9E986F22B9692B00555F3D /* StyleManager.swift in Sources */,
 				CF9E989022B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */,
 				CF9E988322B974EA00555F3D /* NetworkHelper.swift in Sources */,
+				CFC23BF722BBAFAB00B6034B /* MockNetwork.swift in Sources */,
 				CF9E986722B961A600555F3D /* UIImageExtension.swift in Sources */,
 				CF9E987722B9714500555F3D /* LoaderOverlay.swift in Sources */,
 				CF9E989F22B9943A00555F3D /* HeadlineResponse.swift in Sources */,
@@ -566,7 +559,6 @@
 				CFC940E622BAD3D3000EC55A /* ModelAndNeworkTests.swift in Sources */,
 				CFAD1FF122B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift in Sources */,
 				CFC940EA22BAD72F000EC55A /* ViewModelTests.swift in Sources */,
-				CFC940F022BAEBA5000EC55A /* MockNetwork.swift in Sources */,
 				CFC940DE22BAB96F000EC55A /* ExtensionsTests.swift in Sources */,
 				CFC940E822BAD492000EC55A /* BaseViewTests.swift in Sources */,
 			);
@@ -585,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9E986422B961A600555F3D /* UINavigationControllerExtension.swift in Sources */,
+				CFC23BF522BBAEDF00B6034B /* AppNetwork.swift in Sources */,
 				CF9E989A22B992D900555F3D /* DateExtension.swift in Sources */,
 				CF9E988122B9746100555F3D /* HeadlineDetailsViewController.swift in Sources */,
 				CF9E987522B96B1200555F3D /* BaseLabel.swift in Sources */,
@@ -606,7 +599,6 @@
 				CF9E987E22B9744D00555F3D /* HeadlinesViewController.swift in Sources */,
 				CF9E987222B9692B00555F3D /* Constants.swift in Sources */,
 				CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */,
-				CF9E985422B9606C00555F3D /* AppNetwork.swift in Sources */,
 				CF9E986A22B961A600555F3D /* UIVIewExtension.swift in Sources */,
 				CF9E985722B9613B00555F3D /* NSObjectExtension.swift in Sources */,
 			);
@@ -808,6 +800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamonBBCChallengeiOS.app/RamonBBCChallengeiOS";
@@ -829,6 +822,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamonBBCChallengeiOS.app/RamonBBCChallengeiOS";
@@ -849,6 +843,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RamonBBCChallengeiOS;
@@ -869,6 +864,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RamonBBCChallengeiOS;
@@ -889,6 +885,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -908,6 +905,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reimondhill.RamonBBCChallengeiOSDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
