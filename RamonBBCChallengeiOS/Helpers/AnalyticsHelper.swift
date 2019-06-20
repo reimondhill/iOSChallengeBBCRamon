@@ -36,7 +36,7 @@ extension AnalyticsHelper{
     static func sendStat(for event:Event, value:String, network:Network, completion: ((Result<Data, Error>)->Void)?) {
 
         print(logClassName, "Sending stat")
-        network.send(params: [event.rawValue:value],
+        network.send(params: [("event",event.rawValue),("value",value)],
                      urlString: network.analyticsURL,
                      requestType: .get,
                      completion: completion)

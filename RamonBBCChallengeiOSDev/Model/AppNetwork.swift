@@ -47,9 +47,9 @@ class AppNetwork: NSObject, Network{
         
     }
     
-    func send(params: [String : Any], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
+    func send(params: [(String,String)], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
         
-        //let urlComponents = URLComponents(string: urlString)
+        completion?(.success("OK".data(using: .utf8)!))
         
     }
     

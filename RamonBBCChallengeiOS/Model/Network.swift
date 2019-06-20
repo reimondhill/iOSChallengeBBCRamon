@@ -45,6 +45,6 @@ protocol Network:NetworkURL {
     ///   - url: String of the url reques
     ///   - requestType: Method used to send the values. GET, POST.
     ///   - completion: handler called when data is successfully sent and response received
-    func send(params:[String:String], urlString:String, requestType: RequestType, completion:( (Result<Data,Error>)->Void )?)
+    func send(params:[(String, String)], urlString:String, requestType: RequestType, completion:( (Result<Data,Error>)->Void )?)
     
 }

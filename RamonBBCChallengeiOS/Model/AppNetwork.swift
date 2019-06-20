@@ -54,7 +54,7 @@ class AppNetwork:NSObject, Network{
         
     }
     
-    func send(params: [String : String], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>)->Void)?) {
+    func send(params: [(String, String)], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>)->Void)?) {
         
         guard var urlComponents = URLComponents(string: urlString) else{
             completion?(.failure(NetworkError.invalidURL))
@@ -72,15 +72,17 @@ class AppNetwork:NSObject, Network{
         }
         
         print(logClassName, "Sending request to: ", url)
-        performRequest(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5)) { (result) in
+        performRequest(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5)) { [weak self](result) in
+            
+            guard let strongSelf = self else { return }
             
             switch result{
                 
             case .success(let data):
-                print("Success")
+                print(strongSelf.logClassName, "request sent: Success")
                 completion?(.success(data))
             case .failure(let error):
-                print("Failure")
+                print(strongSelf.logClassName, "request sent: Error = ", error)
                 completion?(.failure(error))
             
             }

@@ -54,7 +54,23 @@ class MockNetwork: NSObject, Network{
         
     }
     
-    func send(params: [String : Any], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
+    func send(params: [(String, String)], urlString: String, requestType: RequestType, completion: ((Result<Data, Error>) -> Void)?) {
+        
+        print(logClassName, "urlString = ", urlString)
+        
+        guard var urlComponents = URLComponents(string: urlString) else{
+            completion?(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        urlComponents.queryItems = []
+        for (key, value) in params{
+            urlComponents.queryItems?.append(URLQueryItem(name: key, value: value))
+        }
+        
+        let rtString = urlComponents.url?.relativeString ?? ""
+        completion?(.success(rtString.data(using: .utf8) ?? Data()))
+        
         
     }
     

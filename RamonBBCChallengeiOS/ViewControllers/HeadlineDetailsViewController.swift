@@ -64,14 +64,14 @@ private extension HeadlineDetailsViewController{
     func setupView(){
         
         view.addSubview(scrollView)
-        scrollView.constraintToSuperViewEdges(padding: .init(padding: Margins.medium), safeView: true)
+        scrollView.constraintToSuperViewEdges(padding: .init(padding: Margins.large), safeView: true)
         
         scrollView.addSubview(contentStackView)
         contentStackView.anchor(top: scrollView.topAnchor,
                                 leading: scrollView.leadingAnchor,
                                 bottom: scrollView.bottomAnchor,
                                 trailing: scrollView.trailingAnchor,
-                                padding: .init(padding: Margins.medium),
+                                //padding: .init(padding: Margins.small),
                                 width: scrollView.widthAnchor)
         
         

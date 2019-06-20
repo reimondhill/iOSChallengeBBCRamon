@@ -27,6 +27,7 @@ class NetworkHelper: NSObject {
     required init(network:Network = AppNetwork()){
         
         self.network = network
+        print("TEST -> \(network.analyticsURL)")
         super.init()
         
     }

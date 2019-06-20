@@ -40,4 +40,44 @@ class ModelAndNeworkTests: XCTestCase {
         
     }
     
+    func testSendLoadAnalyticsStats(){
+        
+        let expectedString = "RamonBBCChallengeiOS.app/analytics?event=load&value=10"
+        AnalyticsHelper.sendLoadAnalyticsEvent(time: 100, network: MockNetwork()) { (result) in
+
+            switch result{
+
+            case .success(let data):
+                let dataString = String(decoding: data, as: UTF8.self)
+                XCTAssert(dataString.contains(expectedString), "\(dataString) not contains \(expectedString)")
+
+            case .failure(let error):
+                XCTFail("testSendAnalyticsStats failed: \(error)")
+
+            }
+
+        }
+        
+    }
+    
+    func testSendScreenAnalyticsStats(){
+
+        let expectedString = "RamonBBCChallengeiOS.app/analytics?event=display&value=HeadlinesViewController"
+        AnalyticsHelper.sendScreenAnalyticsEvent(identifier: HeadlinesViewController.identifier, network: MockNetwork()) { (result) in
+
+            switch result{
+
+            case .success(let data):
+                let dataString = String(decoding: data, as: UTF8.self)
+                XCTAssert(dataString.contains(expectedString), "Bad request")
+
+            case .failure(let error):
+                XCTFail("testSendAnalyticsStats failed: \(error)")
+
+            }
+
+        }
+    
+    }
+    
 }
