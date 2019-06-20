@@ -64,7 +64,6 @@
 		CFAD1FE622B94FAB00C393A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */; };
 		CFAD1FF122B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FF022B94FAB00C393A3 /* RamonBBCChallengeiOSTests.swift */; };
 		CFAD1FFC22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FFB22B94FAB00C393A3 /* RamonBBCChallengeiOSUITests.swift */; };
-		CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */; };
 		CFAD201622B9548000C393A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE422B94FAB00C393A3 /* LaunchScreen.storyboard */; };
 		CFAD201722B9548000C393A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD1FE222B94FAB00C393A3 /* Assets.xcassets */; };
 		CFAD202222B955B000C393A3 /* TargetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAD202122B955B000C393A3 /* TargetAssets.xcassets */; };
@@ -78,6 +77,7 @@
 		CFC940EB22BAEB62000EC55A /* headlines-enhanced.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984E22B95E4D00555F3D /* headlines-enhanced.json */; };
 		CFC940EC22BAEB66000EC55A /* headlines.json in Resources */ = {isa = PBXBuildFile; fileRef = CF9E984F22B95E4D00555F3D /* headlines.json */; };
 		CFC940ED22BAEB6B000EC55A /* analytics in Resources */ = {isa = PBXBuildFile; fileRef = CF210F6D22BA70FC00E1C71D /* analytics */; };
+		CFC940F222BC213D000EC55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD1FDB22B94FAA00C393A3 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -589,6 +589,7 @@
 				CF9E986222B961A600555F3D /* StringExtension.swift in Sources */,
 				CF9E986622B961A600555F3D /* UIViewControllerExtension.swift in Sources */,
 				CF9E988E22B9897F00555F3D /* UIEdgeInsetsExtension.swift in Sources */,
+				CFC940F222BC213D000EC55A /* AppDelegate.swift in Sources */,
 				CF210F6C22BA5ED400E1C71D /* AnalyticsHelper.swift in Sources */,
 				CF9E987022B9692B00555F3D /* StyleManager.swift in Sources */,
 				CF9E989122B98B2200555F3D /* HeaderCollectionViewCellViewModel.swift in Sources */,
@@ -598,7 +599,6 @@
 				CF9E98A022B9943A00555F3D /* HeadlineResponse.swift in Sources */,
 				CF9E987E22B9744D00555F3D /* HeadlinesViewController.swift in Sources */,
 				CF9E987222B9692B00555F3D /* Constants.swift in Sources */,
-				CFAD201322B9548000C393A3 /* AppDelegate.swift in Sources */,
 				CF9E986A22B961A600555F3D /* UIVIewExtension.swift in Sources */,
 				CF9E985722B9613B00555F3D /* NSObjectExtension.swift in Sources */,
 			);

@@ -19,25 +19,24 @@ class RamonBBCChallengeiOSUITests: XCTestCase {
 
         app = XCUIApplication()
         //Uncomment next line to use MOCKNetwork for the app
-        //app.launchArguments = ["TEST"]
+        app.launchArguments = ["TEST"]
         app.launch()
         
     }
 
     override func tearDown() {}
 
+    //Simple UITest for HeadlinesViewController(
     func testHeadlinesViewController() {
         print("Hello from UITest after setup")
 
-        let headlineCollectionView = app/*@START_MENU_TOKEN@*/.collectionViews["HeadlinesCollectionView"]/*[[".otherElements[\"HeadlinesViewController\"].collectionViews[\"HeadlinesCollectionView\"]",".collectionViews[\"HeadlinesCollectionView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        let headlineMessage = app/*@START_MENU_TOKEN@*/.staticTexts["HeadlinesMessageLabel"]/*[[".otherElements[\"HeadlinesViewController\"]",".staticTexts[\"No headlines available...\"]",".staticTexts[\"HeadlinesMessageLabel\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        let headlineCollectionView = app.collectionViews["HeadlinesCollectionView"]
+        let headlineMessage = app.staticTexts["HeadlinesMessageLabel"]
 
-        print("Waiting for headlineCollectionView")
         _ = headlineCollectionView.waitForExistence(timeout: 2)
         //print("Waiting for headlineMessage")
         _ = headlineMessage.waitForExistence(timeout: 2)
 
-        print("End Waiting")
         if headlineCollectionView.cells.count == 0{
             print("CollectionView NO results")
             XCTAssert(headlineCollectionView.exists)
@@ -49,6 +48,19 @@ class RamonBBCChallengeiOSUITests: XCTestCase {
             if headlineMessage.exists{
                 XCTAssert(headlineMessage.label == "")
             }
+            
+            
+            let firstCell = headlineCollectionView.cells.firstMatch
+            let labelsInHeadlinesCollectionCell = firstCell.children(matching: .staticText)
+            
+            let titleLabel = labelsInHeadlinesCollectionCell["HeadlineCollectionViewCellTitle"]
+            XCTAssertEqual(titleLabel.label, "How to say: Diplodocus")
+            
+            let lastUpdateLabel = labelsInHeadlinesCollectionCell["HeadlineCollectionViewCellLastUpdated"]
+            XCTAssertEqual(lastUpdateLabel.label, "5 months")
+            
+            firstCell.tap()
+            
         }
 
     }

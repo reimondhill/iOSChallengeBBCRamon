@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if ProcessInfo.processInfo.arguments.contains("TEST"){
             print(logClassName, "I am testing")
+            #if !DEV
             window?.rootViewController = UINavigationController(rootViewController: HeadlinesViewController(networkHelper: NetworkHelper(network: MockNetwork())))
+            #endif
         }
         else{
             window?.rootViewController = UINavigationController(rootViewController: HeadlinesViewController(networkHelper: NetworkHelper.shared))

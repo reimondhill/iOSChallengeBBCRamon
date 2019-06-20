@@ -64,6 +64,7 @@ private extension HeadlineCollectionViewCell{
         backgroundColor = .primaryViewBackground
         
         addSubview(titleLabel)
+        titleLabel.accessibilityIdentifier = "HeadlineCollectionViewCellTitle"
         titleLabel.anchor(top: topAnchor,
                           leading: leadingAnchor,
                           bottom: nil,
@@ -71,6 +72,7 @@ private extension HeadlineCollectionViewCell{
                           padding: .init(padding: Margins.medium))
         
         addSubview(lastUpdateLabel)
+        lastUpdateLabel.accessibilityIdentifier = "HeadlineCollectionViewCellLastUpdated"
         lastUpdateLabel.anchor(top: nil,
                                leading: leadingAnchor,
                                bottom: bottomAnchor,
