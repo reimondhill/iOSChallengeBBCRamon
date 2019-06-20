@@ -13,52 +13,44 @@ class RamonBBCChallengeiOSUITests: XCTestCase {
     var app: XCUIApplication!
     override func setUp() {
         super.setUp()
-        continueAfterFailure = false
+        
+        print("Hello from setup")
+        continueAfterFailure = true
 
         app = XCUIApplication()
         //Uncomment next line to use MOCKNetwork for the app
-        app.launchArguments = ["TEST"]
+        //app.launchArguments = ["TEST"]
         app.launch()
         
-        print("Hello from setup")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    override func tearDown() {}
 
-    func testExample() {
+    func testHeadlinesViewController() {
         print("Hello from UITest after setup")
 
         let headlineCollectionView = app/*@START_MENU_TOKEN@*/.collectionViews["HeadlinesCollectionView"]/*[[".otherElements[\"HeadlinesViewController\"].collectionViews[\"HeadlinesCollectionView\"]",".collectionViews[\"HeadlinesCollectionView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         let headlineMessage = app/*@START_MENU_TOKEN@*/.staticTexts["HeadlinesMessageLabel"]/*[[".otherElements[\"HeadlinesViewController\"]",".staticTexts[\"No headlines available...\"]",".staticTexts[\"HeadlinesMessageLabel\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
 
         print("Waiting for headlineCollectionView")
-        //XCTAssert(headlineCollectionView.waitForExistence(timeout: 2))
+        _ = headlineCollectionView.waitForExistence(timeout: 2)
         //print("Waiting for headlineMessage")
-        //XCTAssert(headlineMessage.waitForExistence(timeout: 2))
+        _ = headlineMessage.waitForExistence(timeout: 2)
 
         print("End Waiting")
-        collectionLabelAssert(collection: headlineCollectionView, label: headlineMessage)
-//
-//        sleep(5)
-//
-//        collectionLabelAssert(collection: headlineCollectionView, label: headlineMessage)
-    }
-
-    func collectionLabelAssert(collection:XCUIElement, label:XCUIElement){
-
-        if collection.cells.count == 0{
+        if headlineCollectionView.cells.count == 0{
             print("CollectionView NO results")
-            XCTAssert(collection.exists)
-            XCTAssert(label.isHittable)
+            XCTAssert(headlineCollectionView.exists)
+            XCTAssert(headlineMessage.isHittable)
         }
         else{
-            print("CollectionView results = ", collection.cells.count)
-            XCTAssert(collection.exists)
-            XCTAssert(!label.isHittable)
+            print("CollectionView results = ", headlineCollectionView.cells.count)
+            XCTAssert(headlineCollectionView.exists)
+            if headlineMessage.exists{
+                XCTAssert(headlineMessage.label == "")
+            }
         }
 
     }
-
+    
 }

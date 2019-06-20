@@ -144,7 +144,7 @@ private extension HeadlinesViewController{
                     strongSelf.headlines = []
                 }
                 
-                strongSelf.messageLabel.text = strongSelf.headlines.count > 0 ? nil:NSLocalizedString("messages.noHeadlines", comment: "")
+                strongSelf.messageLabel.text = strongSelf.headlines.count > 0 ? "":NSLocalizedString("messages.noHeadlines", comment: "")
                 strongSelf.messageLabel.isHidden = strongSelf.headlines.count > 0
                 strongSelf.headlinesCollectionView.reloadData()
                 strongSelf.loaderOverlay.hideOverlayView()
