@@ -59,7 +59,7 @@ class BaseLabel: UILabel {
 
 
 //MARK:- Private methods
-extension BaseLabel{
+private extension BaseLabel{
     
     func setupView(){
         
