@@ -32,4 +32,33 @@ struct Headline:Codable{
                                            newerDate: date)
         
     }
+
+    func getDateString()->String?{
+
+        guard let firstPublished = firstPublished,
+            let updated = updated else{ return nil }
+
+        /*
+“Published: 1 January 1970, 11:29:11 | Updated: 2 January 1971, 09:14:56”.
+         */
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy, HH:mm:ss"
+
+        let publishDate = Date(timeIntervalSince1970: TimeInterval(firstPublished))
+        let lastUpdatedDate = Date(timeIntervalSince1970: TimeInterval(updated))
+
+        let publishDateString = String(format: NSLocalizedString("messages.publishedWithString", comment: ""), dateFormatter.string(from: publishDate))
+        let updatedDateString = String(format: NSLocalizedString("messages.updatedWithString", comment: ""), dateFormatter.string(from: lastUpdatedDate))
+
+        if firstPublished != updated{
+            return "\(publishDateString) | \(updatedDateString)"
+
+        }
+        else{
+            return publishDateString
+        }
+
+    }
+
 }

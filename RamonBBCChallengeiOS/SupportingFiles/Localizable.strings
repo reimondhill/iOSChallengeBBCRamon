@@ -9,3 +9,6 @@
 "messages.noHeadlines" = "No headlines available...";
 "messages.unavailable" = "Unavailable";
 "messages.topStories" = "Top Stories";
+
+"messages.publishedWithString" = "Published: %@";
+"messages.updatedWithString" = "Updated: %@";
